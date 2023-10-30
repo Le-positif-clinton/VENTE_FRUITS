@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TP1_TCHINWA_ISMAEL_CLINTON</string>
+    <string name="title_activity_main">TP1_TCHINWA_ISMAEL_CLINTON</string>
+    <string name="package_name">com.clinton.app</string>
+    <string name="custom_url_scheme">com.clinton.app</string>
+</resources>

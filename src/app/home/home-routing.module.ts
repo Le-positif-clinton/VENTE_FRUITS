@@ -5,7 +5,13 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
+    component: HomePage
+    // children: [
+    //   {
+    //     path: 'detail-fruit',
+    //     loadChildren: () => import('../detail-fruit/detail-fruit.module').then( m => m.DetailFruitPageModule)
+    //   },
+    // ]
   }
 ];
 

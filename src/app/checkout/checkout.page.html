@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">checkout</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+        <ion-img src="{{fruit.image}}"/>
+        <ion-card-content class="text-center bg-dgray">
+          <ion-card-title class="text-center">
+            {{fruit.nom}}
+          </ion-card-title>
+          <br>
+          <p>
+            {{fruit.description}}
+          </p><br>
+          <!-- <h2>Categorie: {{fruit.categorie.nom}}</h2> -->
+          <!-- <br> -->
+          <!-- <h3>{{fruit.prix_achat}}</h3> -->
+          <!-- <br> -->
+          <h3>Prix: {{fruit.prix_vente}} Fcfa</h3>
+          <br>
+          <h2>Stock disponible: {{fruit.stock}} produits</h2>
+          <!-- <ion-button (click)="presentActionSheet()">Actions</ion-button> -->
+          <br>
+          <div class="container d-flex">
+            <ion-button icon-only (click)="remove()">
+              <ion-icon name="remove-circle"></ion-icon>
+            </ion-button>
+            <div class="prix b-c-yellow">
+               <div class="b-c-yello d-f"> Quantite: {{quantite}} </div>
+            <div class="b-c-yellow d-f" *ngIf="montant != 0"> Montant: {{montant}} Fcfa</div>
+            </div>
+           
+            <ion-button icon-only (click)="add()">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+            
+          </div>
+          <ion-button color="success" (click)="valider()">
+              <ion-icon name="okay"></ion-icon>
+              Valider
+            </ion-button>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center">Mon fruit Prefere</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group *ngFor="let fruit of fruitList">
+            <ion-accordion value="{{fruit.nom}}" size="12">
+              <ion-item slot="header">
+                <ion-label>  
+                  <ion-img src="{{fruit.image}}" sizes="2"></ion-img>
+                  <p class="text-center"><strong class="">{{fruit.nom}} </strong></p>  
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" (click)="detailFruit(fruit)">
+                <p>{{fruit.description}}</p>
+                
+              </div>
+              <div class="ion-padding d-flex" slot="content" (click)="detailFruit(fruit)">
+                <span>{{fruit.prix_achat}} Fcfa</span>
+                <span>Stock: {{fruit.stock}}</span>
+              </div>
+            </ion-accordion>
+  
+        </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

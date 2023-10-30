@@ -24,3 +24,23 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.text-center{
+  text-align: center;
+}
+.d-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.b-c-yellow{
+  background-color: rgb(221, 213, 213);
+}
+
+.bg-dgray{
+  background-color: darkgray;
+}
+
+.bg-white{
+  background-color:rgb(202, 201, 201);
+}

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="text-center">FrechFruits</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+            
+            <ion-card>
+              
+              <ion-card-content>
+                <ion-card-title>
+                  <h1 class="text-center"></h1>
+                </ion-card-title>
+              </ion-card-content>
+              <ion-img src="../../assets/icon.png"/>
+            </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <h6>Montant total prix d'achat: <strong>{{prixAchat}} Fcfa</strong></h6>
+            <h6>Montant total prix de vente: <strong>{{prixVente}} Fcfa</strong></h6>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row size="12">
+                <ion-col *ngFor="let categorie of listeCat" class="text-center" [ngStyle]="{'background-color': categorie.couleur, 'margin': '1em', 'border-radius':'1em','padding':'0.5em'} " size=4.8 size-sm=4.8 size-md=4.8 size-lg=3.8 size-xl=3.8> 
+                  <div (click)="fruitsCat(categorie)"><strong>{{categorie.nom}} </strong></div>                  
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+</ion-content>

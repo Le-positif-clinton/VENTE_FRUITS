@@ -1,20 +1,59 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar [ngStyle]="{'background-color': listeFruits[0].categorie.couleur}">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="text-center" [ngStyle]="{'background-color': listeFruits[0].categorie.couleur, 'padding':'1em'}">
+      {{listeFruits[0].categorie.nom}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- <ion-menu contentId="main-
+content" menuId="pearl_side" class="bg_side" type="overlay">
+<ion-content>
+//You can define your content there
+</ion-content>
+</ion-menu> -->
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h1>Delices</h1>
   </div>
+    <ion-card>
+      <ion-card-header class="text-center">
+        <h3>Tous les fruits de la categorie {{listeFruits[0].categorie.nom}}</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list >
+          <ion-item *ngFor="let fruit of listeFruits">
+            
+            <ion-accordion-group>
+            <ion-accordion value="{{fruit.nom}}" size="12" [ngStyle]="{'background-color': 'darkgray'}">
+              <ion-item slot="header">
+                <ion-label>  
+                  <ion-img src="{{fruit.image}}" sizes="2"></ion-img>
+                  <p class="text-center"><strong class="">{{fruit.nom}} </strong></p>  
+                </ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content" (click)="detailFruit(fruit)" >
+                <p>{{fruit.description}}</p>
+                
+              </div>
+              <div class="ion-padding d-flex" slot="content" (click)="detailFruit(fruit)">
+                <span>{{fruit.prix_achat}} Fcfa</span>
+                <span>{{fruit.stock}} Produits</span>
+              </div>
+            </ion-accordion>
+  
+        </ion-accordion-group>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  <!-- </div> -->
+
+  
 </ion-content>
+
